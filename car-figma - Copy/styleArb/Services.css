@@ -1,0 +1,2302 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  direction: rtl;
+  /* background-color: var(--background-color); */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --small-text-grey-color: #2e2e2e;
+  --section-grey-color: #2e2e2e;
+  --background-color: #f5f5f5;
+  --text-color: #f5f5f5;
+  --text-gray-soft-color: #a3a3a3;
+  --soft-grey-color: #e8e8e8;
+  --yelow-color: #f4b63e;
+  --grey-color: #2b2e34;
+}
+
+header {
+  background-image: url(./../pictures/Hero_Background_AR.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+/* :::::::::::::   NAVBAR   :::::::::::::::::: */
+nav {
+  position: fixed;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333333;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  padding: 0 0px 0 40px;
+}
+nav.sticky {
+  padding: 0 0px 0 0px;
+  /* From https://css.glass */
+  background: #1b1b1b;
+  z-index: 999;
+  transition: 1s;
+}
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  display: block;
+  border-bottom: none;
+  border-left: 1px solid #333333;
+  border-top: none;
+  border-right: 1px solid #333333;
+  padding: 19px;
+}
+nav ul li:hover {
+  display: block;
+  border-bottom: 1px solid var(--yelow-color);
+  border-left: 1px solid var(--yelow-color);
+  border-top: 1px solid var(--yelow-color);
+  border-right: 1px solid var(--yelow-color);
+}
+nav ul .Feedback {
+  border-bottom: none;
+  border-left: 1px solid #333333;
+  border-top: none;
+  border-right: none;
+}
+nav ul .Feedback:hover {
+  border-bottom: 1px solid var(--yelow-color);
+  border-left: 1px solid var(--yelow-color);
+  border-top: 1px solid var(--yelow-color);
+  border-right: 1px solid var(--yelow-color);
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: start;
+  border-radius: 5px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown {
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  margin-top: 16px;
+  position: absolute;
+  border: 1px solid var(--section-grey-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: white;
+  border: 1px solid var(--section-grey-color);
+  width: 100%;
+  padding: 22px 35px;
+  display: block;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  background-color: #111;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  margin: 18px -19px;
+}
+.dropdown:hover .dropdown-content a {
+  color: red;
+  width: 100%;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 30px;
+  }
+  nav.sticky {
+    padding: 0 15px 0 1dvh;
+    /* From https://css.glass */
+    background: #1b1b1b;
+    z-index: 999;
+    transition: 1s;
+  }
+}
+@media (max-width: 920px) {
+  nav {
+    background-color: #111;
+  }
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul li:hover {
+    display: block;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    padding: 0px;
+    border-top: none;
+    /* border: 1px solid grey; */
+  }
+
+  .dropdown {
+    display: block;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .dropdown-content {
+    position: relative;
+    text-align: center;
+  }
+  .dropbtn {
+    padding: 22px 33px;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .dropdown-content {
+    display: block;
+    margin: 0px -32px;
+    position: none;
+    border: none;
+    border-top: 1px solid var(--section-grey-color);
+  }
+
+  .dropdown-content a {
+    color: white;
+    border:none;
+     border-bottom: 1px solid var(--section-grey-color); 
+    width: 100%;
+    padding: 22px 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    /* background-color: #111; */
+  }
+  .dropdown-content {
+    display: block;
+
+    margin: 0px;
+  }
+  .dropdown:hover .dropdown-content a {
+    width: 100%;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  nav ul {
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    
+    padding: 10px 0;
+    border-left: none;
+    border-right: none;
+    align-items: center;
+    border-top: 1px solid #333333;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    padding-left: 33px;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  nav ul .Feedback {
+    border-bottom: 1px solid #333333;
+    border-top: 1px solid #333333;
+    font-size: 19px;
+    border-right: none;
+    padding-left: 0px;
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+    text-align: start;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    /* color: white; */
+  }
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.header-info h1 {
+  font-size: 64px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text-color);
+  padding: 20px;
+  padding-left: 0px;
+
+}
+.header-info p {
+  color: var(--text-color);
+  padding: 20px;
+  padding-left: 0px;
+  width: 42rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 23px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.header-info-div {
+  border-bottom: 4px solid var(--yelow-color);
+
+  width: 45%;
+  display: block;
+  margin: 192px 42px;
+}
+.home-button {
+  padding: 20px;
+}
+.home-button a {
+  padding: 12px 9px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: black;
+  border-radius: 4px;
+  margin-right: 14px;
+}
+.yellow-button {
+  background-color: var(--yelow-color);
+}
+.grey-button {
+  background-color: var(--text-color);
+}
+
+/* :::::::::::::   FINISH HOME LANDING   :::::::::::::::::: */
+
+/* :::::::::::::   FINISH about us    :::::::::::::::::: */
+
+
+/* :::::::::::::   FINISH about us    :::::::::::::::::: */
+
+/* :::::::::::::   start Services    :::::::::::::::::: */
+.mechanical-servives{
+  text-align: center;
+  height: 100%;
+  padding: 32px;
+}
+.mechanical-servives h1 {
+  font-size: 38px;
+  font-family: "roboto", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #2b2e34;
+  margin-bottom: 22px;
+
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 22px;
+}
+.mechanical-servives-title {
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  color: var(--yelow-color);
+}
+.mechanical-servives-title::before {
+  content: "";
+  position: absolute;
+  right: 210px;
+  top: 9px;
+  bottom: 11px;
+  width: 13%;
+  height: 2px;
+  /* Set the height of the underline */
+  background-color: var(--yelow-color);
+}
+.mechanical-servives-title::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 81px;
+  width: 13%;
+  height: 2px;
+  /* Set the height of the underline */
+  background-color: var(--yelow-color);
+}
+.main-mechanical-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+.one-main-mechanical-services {
+  display: block;
+  margin: 0 auto;
+}
+.service-icon-text {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  margin-top: 60px;
+  height: 80px;
+}
+.service-icon-text p{
+ font-size: 18px;
+ font-weight:500;
+ color: #333333;
+}
+.service-icon-text img{
+  max-width: 90px;
+}
+
+
+/* :::::::::::::   finish Service   :::::::::::::::::: */
+.service-us {
+    display: flex;
+    padding-left: 114px;
+    padding-right: 114px;
+    padding-top: 144px;
+    padding: 104px;
+    gap: 63px;
+    background: #2E2E2E;
+  }
+  .first-about {
+  }
+  .service-section {
+    color: var(--yelow-color);
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    padding-right: 29px;
+    margin-bottom: 14px;
+    margin-top: 24px;
+  }
+  .service-section::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 2px;
+    width: 12%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .service-about h1 {
+    font-size: 31px;
+    color: #ffffff;
+    font-style: italic;
+  }
+  .service-about p {
+    color: #A3A3A3;
+    font-size: 16px;
+    margin-bottom: 14px;
+    width: 90%;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    margin-top: 14px;
+  }
+  .service-about ul{
+    list-style: none;
+    
+  }
+  .service-about ul li {
+    color: #A3A3A3;font-family: "ROBOTO", sans-serif;
+    padding-bottom: 5px;
+    font-size: 16px;
+  }
+  .second-about {
+  }
+  .second-about img {
+    height: 100%;
+    max-width: 600px;
+    border-radius: 6px;
+  }
+.service-about ul li {
+  list-style: circle;
+  margin-right: 15px; ;
+}
+
+  /* ::::::::::::::: parts ::::::::::: */
+
+  .parts-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .parts-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-top: 22px;
+  }
+  .parts-servives-title {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    font-weight: bold;
+    font-family: "roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .parts-servives-title::before {
+    content: "";
+    position: absolute;
+    left: -79px;
+    top: 9px;
+    bottom: 11px;
+    width: 18%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .parts-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+     left: 2px;
+    width: 18%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-parts-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+ .parts-icon-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blaock
+    ;
+    margin: 44px;
+
+ }
+ .main-parts-services {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   justify-content: center;
+ }
+.parts-icon-text{
+   display: flex;
+   justify-content: start;
+   align-items: start;
+   height: 190px;
+   padding: 12px;
+   
+   margin: 44px;
+
+}
+
+.parts-icon-text img{
+   max-width: 70px;
+   align-self: start;
+}
+.parts-icon-text-info  {
+   width: 80%;
+   text-align: start;
+   padding-left: 12px;
+   margin: 0 auto;
+}
+.parts-icon-text-info h4{
+   font-size: 18px;
+   font-family: "Roboto", sans-serif;
+   font-weight: bold;
+   color: #333333;
+   
+   padding-bottom: 8px;
+}
+.parts-icon-text-info p{
+   font-size: 13px;
+   font-family: "Roboto", sans-serif;
+   font-weight: 300;
+   line-height: 17px;
+   letter-spacing: 1px;
+   color: #5b5b5b;
+}
+  /* ::::::::::::::: parts ::::::::::: */
+
+/* :::::::::::::   START baner    :::::::::::::::::: */
+.partner-baner{
+    background-image: url(../pictures/About/about-landing.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem  10rem;
+}
+.partner-baner h1{
+    font-size: 34px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-color);
+    text-align: center;
+}
+.partner-baner span{color: var(--yelow-color);}
+
+/* :::::::::::::   FINISH baner  :::::::::::::::::: */
+/* :::::::::::::   START baner    :::::::::::::::::: */
+.partner-baner-two{
+    background-image: url(../pictures/About/Figure\ -\ Landing\ Page\ Image\ →\ wr6IagBJ8EmOwySB5WnpXd6sx8.jpg\ \(2\).png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem  15rem;
+}
+.partner-baner-two h1{
+    font-size: 34px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-color);
+    text-align: center;
+}
+.partner-baner-two span{color: var(--yelow-color);}
+
+/* :::::::::::::   FINISH baner  :::::::::::::::::: */
+
+
+/* :::::::::::::   start Services    :::::::::::::::::: */
+ /* ::::::::::::::: parts ::::::::::: */
+
+ .ELECTRONIC-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .ELECTRONIC-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-top: 22px;
+  }
+  .ELECTRONIC-servives-title {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .ELECTRONIC-servives-title::before {
+    content: "";
+    position: absolute;
+    left: -85px;
+    top: 9px;
+    bottom: 11px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .ELECTRONIC-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 54px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-ELECTRONIC-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+ .ELECTRONIC-icon-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ;
+    width: 69%;
+    height: 160px;
+    margin: 40px auto;
+    padding: 12px;
+
+ }
+ .ELECTRONIC-icon-text img{
+    max-width: 100px;
+    align-self: start;
+ }
+ .ELECTRONIC-icon-text-info  {
+    text-align: start;
+    align-self: start;
+    padding-left: 12px;
+    margin: 0 auto;
+ }
+ .ELECTRONIC-icon-text-info h4{
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #333333;
+    padding-bottom: 8px;
+ }
+ .ELECTRONIC-icon-text-info p{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #787777;
+ }
+/* :::::::::::::   start  footer   :::::::::::::::::: */
+.last-electronic-servives{
+  text-align: center;
+  height: 100%;
+  padding: 32px;
+}
+.last-electronic-servives h1 {
+  font-size: 38px;
+  font-family: "roboto", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #2b2e34;
+  margin-bottom: 22px;
+
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 22px;
+}
+.last-electronic-servives-title {
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  color: var(--yelow-color);
+}
+.last-electronic-servives-title::before {
+  content: "";
+  position: absolute;
+    left: 54px;
+  top: 9px;
+  bottom: 11px;
+  width: 13%;
+  height: 2px;
+  /* Set the height of the underline */
+  background-color: var(--yelow-color);
+}
+.last-electronic-servives-title::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -85px;
+  width: 13%;
+  height: 2px;
+  /* Set the height of the underline */
+  background-color: var(--yelow-color);
+}
+.main-last-electronic-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+.one-main-last-electronic-services {
+  display: block;
+  margin: 0 auto;
+}
+.last-electronic-icon-text {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  margin-top: 60px;
+  height: 80px;
+}
+
+.last-electronic-icon-text p{
+ font-size: 18px;
+ font-weight:500;
+ color: #333333;
+}
+.last-electronic-icon-text img{
+  max-width: 90px;
+}
+/* :::::::::::::   start  footer   :::::::::::::::::: */
+/* :::::::::::::   start  footer   :::::::::::::::::: */
+footer {
+  color: #ffffff;
+
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  align-items: center;
+  padding: 32px;
+}
+footer span {
+  color: var(--yelow-color);
+}
+footer a {
+  color: #ffffff;
+  padding: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--yelow-color);
+}
+.footer-service {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+/* :::::::::::::   finish  footer   :::::::::::::::::: */
+/* :::::::::::::  media query  :::::::::::::::::: */
+
+
+/* Media query for small devices (e.g., mobile phones) */
+@media only screen and (max-width: 700px) {
+  /* :::::::::::::   HOME LANDING   :::::::::::::::::: */
+  .header-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header-info-div h1 {
+    font-size: 62px;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-style: italic;
+    color: var(--text-color);
+    padding: 20px;
+    padding-left: 0px;
+  }
+  .header-info-div p {
+    color: var(--text-color);
+    width: 29rem;
+    padding: 20px;
+    padding-left: 0px;
+    padding-top: 2px;
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: 23px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .header-info-div {
+    border-bottom: 4px solid var(--yelow-color);
+  
+    width: 74%;
+    display: block;
+    margin: 192px 52px;
+  }
+  .home-button {
+    padding: 20px;
+  }
+  .home-button a {
+    padding: 12px 9px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: black;
+    border-radius: 4px;
+    margin-right: 14px;
+  }
+  
+  /* :::::::::::::   FINISH HOME LANDING   :::::::::::::::::: */
+  
+  /* :::::::::::::   FINISH about us    :::::::::::::::::: */
+  
+  
+  /* :::::::::::::   FINISH about us    :::::::::::::::::: */
+  
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+  .mechanical-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .mechanical-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .mechanical-servives-title {
+    position: relative;
+    font-size: 1px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .mechanical-servives-title::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 9px;
+    bottom: 11px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .mechanical-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -29px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-mechanical-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-mechanical-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .service-icon-text {
+    display: flex;
+    align-items: center;
+    margin: 60px;
+  }
+  
+  /* :::::::::::::   finish Service   :::::::::::::::::: */
+  .service-us {
+      display: flex;
+      flex-direction: column-reverse;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 14px;
+      padding: 14px;
+      gap: 63px;
+      background: #2E2E2E;
+    }
+    .first-about {
+    }
+    .service-section {
+      color: var(--yelow-color);
+      font-family: "Roboto";
+      font-weight: 500;
+      font-size: 15px;
+      position: relative;
+      display: inline-block;
+      padding-left: 12px;
+      margin-bottom: 14px;
+      margin-top: 24px;
+    }
+    .service-section::before {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      left: -4px;
+      width: 4%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .service-about h1 {
+      font-size: 31px;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .service-about p {
+      color: #A3A3A3;
+      font-size: 16px;
+      margin-bottom: 14px;
+      width: 90%;
+      letter-spacing: 0.5px;
+      line-height: 22px;
+      margin-top: 14px;
+    }
+    .service-about ul{
+      list-style: none;
+      
+    }
+    .service-about ul li {
+      color: #A3A3A3;font-family: "ROBOTO", sans-serif;
+      padding-bottom: 5px;
+      font-size: 16px;
+    }
+    .second-about {
+      text-align: center;
+    }
+    .second-about img {
+      max-width: 300px;
+      width: 70%;
+    }
+  
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+    .parts-servives{
+      text-align: center;
+      height: 100%;
+      padding: 32px;
+    }
+    .parts-servives h1 {
+      font-size: 28px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .parts-servives-title {
+      position: relative;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: "roboto", sans-serif;
+      color: var(--yelow-color);
+    }
+    .parts-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -29px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .parts-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: -29px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-parts-services {
+      display: block;
+      margin: 0 auto;
+    }
+   .parts-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      margin: 44px;
+  
+   }
+   .parts-icon-text img{
+      max-width: 80px;
+      align-self: start;
+   }
+   .parts-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .parts-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .parts-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner{
+      background-image: url(../pictures/About/about-landing.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  2rem;
+  }
+  .partner-baner h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner-two{
+      background-image: url(../pictures/About/Figure\ -\ Landing\ Page\ Image\ →\ wr6IagBJ8EmOwySB5WnpXd6sx8.jpg\ \(2\).png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  4rem;
+  }
+  .partner-baner-two h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner-two span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  
+  
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+   /* ::::::::::::::: parts ::::::::::: */
+  
+   .ELECTRONIC-servives{
+      text-align: center;
+      height: 100%;
+      padding: 2px;
+    }
+    .ELECTRONIC-servives h1 {
+      font-size: 38px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .ELECTRONIC-servives-title {
+      position: relative;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: "roboto", sans-serif;
+      color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -29px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: -29px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-ELECTRONIC-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+   .ELECTRONIC-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      width: 80%;
+      margin: 40px auto;
+  
+   }
+   .ELECTRONIC-icon-text img{
+      max-width: 80px;
+      align-self: start;
+   }
+   .ELECTRONIC-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .ELECTRONIC-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .ELECTRONIC-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+    
+  
+  
+  /* :::::::::::::   start  footer   :::::::::::::::::: */
+  .last-electronic-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .last-electronic-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .last-electronic-servives-title {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 9px;
+    bottom: 11px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -29px;
+    width: 13%;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-last-electronic-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-last-electronic-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .last-electronic-icon-text {
+    display: flex;
+    align-items: center;
+    margin:  30px 2px;
+  }
+  /* :::::::::::::   start  footer   :::::::::::::::::: */
+  /* :::::::::::::   FINISH about us    :::::::::::::::::: */
+
+  /* :::::::::::::   finish royal   :::::::::::::::::: */
+
+  /* :::::::::::::   start  footer   :::::::::::::::::: */
+  footer {
+    color: #ffffff;
+
+    display: block;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    align-items: center;
+    padding: 32px;
+  }
+  footer span {
+    color: var(--yelow-color);
+  }
+  footer .copy-right {
+    margin-bottom: 13px;
+  }
+  footer a {
+    color: #ffffff;
+    padding: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--yelow-color);
+  }
+  .footer-service {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+}
+
+/* Media query for tablets (e.g., iPad) */
+@media only screen and (max-width: 650px){
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+  .mechanical-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .mechanical-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .mechanical-servives-title {
+    position: relative;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .mechanical-servives-title::before {
+    content: "";
+    position: absolute;
+     right:304px ;
+    top: 13px;
+    bottom: 11px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .mechanical-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-mechanical-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-mechanical-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .service-icon-text {
+    display: flex;
+    align-items: center;
+    margin: 30px 10px;
+  }
+  .service-icon-text p {
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: #333333;
+}
+  
+  /* :::::::::::::   finish Service   :::::::::::::::::: */
+  .service-us {
+      display: flex;
+      flex-direction: column-reverse;
+      
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 14px;
+      padding: 14px;
+      gap: 63px;
+      background: #2E2E2E;
+    }
+    .first-about {
+    }
+    .service-section {
+      color: var(--yelow-color);
+      font-family: "Roboto";
+      font-weight: 500;
+      font-size: 19px;
+      position: relative;
+      display: inline-block;
+      padding-left: 12px;
+      margin-bottom: 14px;
+      margin-top: 24px;
+    }
+    .service-section::before {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      left: -4px;
+      width: 4%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .service-about h1 {
+      font-size: 31px;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .service-about p {
+      color: #A3A3A3;
+      font-size: 16px;
+      margin-bottom: 14px;
+      width: 90%;
+      letter-spacing: 0.5px;
+      line-height: 22px;
+      margin-top: 14px;
+    }
+    .service-about ul{
+      list-style: none;
+      
+    }
+    .service-about ul li {
+      color: #A3A3A3;font-family: "ROBOTO", sans-serif;
+      padding-bottom: 5px;
+      font-size: 16px;
+    }
+    .second-about {
+      text-align: center;
+    }
+    .second-about img {
+      max-width: 700px;
+      width: 70%;
+    }
+    .circle-service{
+      height: 40px;
+      margin-left: 33px;
+      width: 40px;
+      background-color: white;
+      border-radius: 50%;
+    }
+  
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+    .parts-servives{
+      text-align: center;
+      height: 100%;
+      padding: 32px;
+    }
+    .parts-servives h1 {
+      font-size: 28px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .parts-servives-title {
+      position: relative;
+      font-size: 21px;
+      font-weight: bold;
+      font-family: "roboto", sans-serif;
+      color: var(--yelow-color);
+    }
+    .parts-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -99px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .parts-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: 29px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-parts-services {
+      display: block;
+      margin: 0 auto;
+    }
+   .parts-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      margin: 44px;
+  
+   }
+   .parts-icon-text img{
+      max-width: 80px;
+      align-self: start;
+   }
+   .parts-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .parts-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .parts-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner{
+      background-image: url(../pictures/About/about-landing.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  2rem;
+  }
+  .partner-baner h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner-two{
+      background-image: url(../pictures/About/Figure\ -\ Landing\ Page\ Image\ →\ wr6IagBJ8EmOwySB5WnpXd6sx8.jpg\ \(2\).png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  4rem;
+  }
+  .partner-baner-two h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner-two span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  
+  
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+   /* ::::::::::::::: parts ::::::::::: */
+  
+   .ELECTRONIC-servives{
+      text-align: center;
+      height: 100%;
+      padding: 2px;
+      margin-top: 44px;
+
+    }
+    .ELECTRONIC-servives h1 {
+      font-size: 38px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .ELECTRONIC-servives-title {
+      position: relative;
+      font-size: 21px;
+      font-weight: 600;
+      font-family: "Roboto", 
+      sans-serif;
+      color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: -29px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-ELECTRONIC-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+   .ELECTRONIC-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      width: 100%;
+      padding: 12px;
+      margin: 40px auto;
+  
+   }
+   .ELECTRONIC-icon-text img{
+      max-width: 70px;
+      align-self: start;
+   }
+   .ELECTRONIC-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .ELECTRONIC-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .ELECTRONIC-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+    
+  
+  
+  /* :::::::::::::   start  footer   :::::::::::::::::: */
+  .last-electronic-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .last-electronic-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .last-electronic-servives-title {
+    position: relative;
+      font-size: 21px;
+      font-weight: 600;
+      font-family: "Roboto", 
+      sans-serif;
+      color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::before {
+    content: "";
+      position: absolute;
+      left: -99px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 29px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-last-electronic-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-last-electronic-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .last-electronic-icon-text {
+    display: flex;
+    align-items: center;
+    margin:  30px 2px;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 520px){
+  .header-info-div p {
+    color: var(--text-color);
+    width: 100%;
+    padding: 20px ;
+    padding-left: 0px;
+    padding-top: 2px;
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: 23px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+  .mechanical-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .mechanical-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .mechanical-servives-title {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: var(--yelow-color);
+  }
+  .mechanical-servives-title::before {
+    content: "";
+    position: absolute;
+     right:284px ;
+    top: 13px;
+    bottom: 11px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .mechanical-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-mechanical-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-mechanical-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .service-icon-text {
+    display: flex;
+    align-items: center;
+    margin: 30px 10px;
+  }
+  .service-icon-text p {
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: #333333;
+}
+  
+  /* :::::::::::::   finish Service   :::::::::::::::::: */
+  .service-us {
+      display: flex;
+      flex-direction: column-reverse;
+      
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 14px;
+      padding: 14px;
+      gap: 63px;
+      background: #2E2E2E;
+    }
+    .first-about {
+    }
+    .service-section {
+      color: var(--yelow-color);
+      font-family: "Roboto";
+      font-weight: 500;
+      font-size: 19px;
+      position: relative;
+      display: inline-block;
+      padding-left: 12px;
+      margin-bottom: 14px;
+      margin-top: 24px;
+    }
+    .service-section::before {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      left: -4px;
+      width: 4%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .service-about h1 {
+      font-size: 31px;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .service-about p {
+      color: #A3A3A3;
+      font-size: 16px;
+      margin-bottom: 14px;
+      width: 90%;
+      letter-spacing: 0.5px;
+      line-height: 22px;
+      margin-top: 14px;
+    }
+    .service-about ul{
+      list-style: none;
+      
+    }
+    .service-about ul li {
+      color: #A3A3A3;font-family: "ROBOTO", sans-serif;
+      padding-bottom: 5px;
+      font-size: 16px;
+    }
+    .second-about {
+      text-align: center;
+    }
+    .second-about img {
+      max-width: 700px;
+      width: 70%;
+    }
+    .circle-service{
+      height: 40px;
+      margin-left: 33px;
+      width: 40px;
+      background-color: white;
+      border-radius: 50%;
+    }
+  
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+    .parts-servives{
+      text-align: center;
+      height: 100%;
+      padding: 32px;
+    }
+    .parts-servives h1 {
+      font-size: 28px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .parts-servives-title {
+      position: relative;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: "roboto", sans-serif;
+      color: var(--yelow-color);
+    }
+    .parts-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -99px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .parts-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: 29px;
+      width: 13%;
+      height: 2px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-parts-services {
+      display: block;
+      margin: 0 auto;
+    }
+   .parts-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      margin: 44px;
+  
+   }
+   .parts-icon-text img{
+      max-width: 80px;
+      align-self: start;
+   }
+   .parts-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .parts-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .parts-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+  
+    /* ::::::::::::::: parts ::::::::::: */
+  
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner{
+      background-image: url(../pictures/About/about-landing.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  2rem;
+  }
+  .partner-baner h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  /* :::::::::::::   START baner    :::::::::::::::::: */
+  .partner-baner-two{
+      background-image: url(../pictures/About/Figure\ -\ Landing\ Page\ Image\ →\ wr6IagBJ8EmOwySB5WnpXd6sx8.jpg\ \(2\).png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem  4rem;
+  }
+  .partner-baner-two h1{
+      font-size: 34px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+  }
+  .partner-baner-two span{color: var(--yelow-color);}
+  
+  /* :::::::::::::   FINISH baner  :::::::::::::::::: */
+  
+  
+  /* :::::::::::::   start Services    :::::::::::::::::: */
+   /* ::::::::::::::: parts ::::::::::: */
+  
+   .ELECTRONIC-servives{
+      text-align: center;
+      height: 100%;
+      padding: 2px;
+      margin-top: 44px;
+
+    }
+    .ELECTRONIC-servives h1 {
+      font-size: 38px;
+      font-family: "roboto", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #2b2e34;
+      margin-bottom: 22px;
+    
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 22px;
+    }
+    .ELECTRONIC-servives-title {
+      position: relative;
+      font-size: 21px;
+      font-weight: 600;
+      font-family: "Roboto", 
+      sans-serif;
+      color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .ELECTRONIC-servives-title::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: -29px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+    }
+    .main-ELECTRONIC-services {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+    }
+   .ELECTRONIC-icon-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blaock
+      ;
+      width: 100%;
+      padding: 12px;
+      margin: 40px auto;
+  
+   }
+   .ELECTRONIC-icon-text img{
+      max-width: 70px;
+      align-self: start;
+   }
+   .ELECTRONIC-icon-text-info  {
+      width: 80%;
+      text-align: start;
+      padding-left: 12px;
+      margin: 0 auto;
+   }
+   .ELECTRONIC-icon-text-info h4{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 8px;
+   }
+   .ELECTRONIC-icon-text-info p{
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: #333333;
+   }
+    
+  
+  
+  /* :::::::::::::   start  footer   :::::::::::::::::: */
+  .last-electronic-servives{
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+  .last-electronic-servives h1 {
+    font-size: 38px;
+    font-family: "roboto", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2e34;
+    margin-bottom: 22px;
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 22px;
+  }
+  .last-electronic-servives-title {
+    position: relative;
+      font-size: 21px;
+      font-weight: 600;
+      font-family: "Roboto", 
+      sans-serif;
+      color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::before {
+    content: "";
+      position: absolute;
+      left: -99px;
+      top: 9px;
+      bottom: 11px;
+      width: 13%;
+      height: 4px;
+      /* Set the height of the underline */
+      background-color: var(--yelow-color);
+  }
+  .last-electronic-servives-title::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 29px;
+    width: 13%;
+    height: 4px;
+    /* Set the height of the underline */
+    background-color: var(--yelow-color);
+  }
+  .main-last-electronic-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .one-main-last-electronic-services {
+    display: block;
+    margin: 0 auto;
+  }
+  .last-electronic-icon-text {
+    display: flex;
+    align-items: center;
+    margin:  30px 2px;
+  }
+}
+
+@media only screen and (max-width: 690px){
+  .main-ELECTRONIC-services {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    padding: 12px;
+  }
+  .main-mechanical-services {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    
+}
+.ELECTRONIC-icon-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px 0px;
+    padding: 40px 0;
+}
+.header-info-div p {
+  color: var(--text-color);
+  width: 100%;
+  padding: 20px;
+  padding-left: 0px;
+  padding-top: 2px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 23px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.parts-icon-text {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 100%;
+  margin: 4px;
+}
+.parts-icon-text-info p {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 22px;
+  color: #333333;
+}
+.ELECTRONIC-icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 90px 0px;
+}
+.ELECTRONIC-servives h1 {
+  font-size: 38px;}
+  .main-last-electronic-services {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+  }
+
+}
+.second-about img {
+  height: 100%;
+  max-width: 600px;
+  border-radius: 6px;
+}
